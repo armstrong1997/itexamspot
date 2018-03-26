@@ -16,10 +16,10 @@
 		$mobile= $_POST["mobile"];
 		$sig= $_POST["sig"];
 		
-		$qry = "insert into user values('$firstname',$roll,'$password','$lastname','$mailid',$year,'$sec',$cgpa,$mobile,'$sig','$midname')";
+	$qry = "insert into user(name,roll,password,lastname,mailid,year,section,cgpa,mobile,sig,middlename) values('$firstname',$roll,'$password','$lastname','$mailid',$year,'$sec',$cgpa,$mobile,'$sig','$midname')";
 		$result =mysqli_query($con,$qry);
 		if(!empty($result)) {
-		   
+	
 $to =$mailid ;
 $subject ='IT ExampSpot';
 
@@ -43,7 +43,7 @@ $message .= '</body></html>';
 // Sending email
 mail($to, $subject, $message, $headers);
 
-				echo "<script>console.log('success')</script>";
+			echo "<script>console.log('success')</script>";
 		} else {
 		
 			echo "<script>console.log('failed')</script>";
